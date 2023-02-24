@@ -1,13 +1,14 @@
 import React from "react";
 import ShoeCard from "../components/ShoeCard";
+import { AllShoes } from "../styled";
 
 const ShoeList = ({ allShoes }) => {
   return (
-    <div>
+    <AllShoes>
       {allShoes.map((shoe) => (
         <ShoeCard shoeName={shoe.name} imgUrl={shoe.image} price={shoe.price} />
       ))}
-    </div>
+    </AllShoes>
   );
 };
 
