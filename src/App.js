@@ -1,22 +1,30 @@
-import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomePage, ShoeList, ShoePage, AddShoe } from "./pages";
+import { HomePage, ShoeList, ShoePage, AddShoe, ErrorPage } from "./pages";
 import { MainNavigation } from "./components";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainNavigation />,
-    children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/products", element: <ShoeList /> },
-      { path: "/shoe-page", element: <ShoePage /> },
-      { path: "/add-shoe", element: <AddShoe /> },
-    ],
-  },
-]);
+import { getAllShoes } from "./utils/API";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [shoes, setShoes] = useState();
+
+  useEffect(() => {
+    getAllShoes(setShoes);
+  }, []);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainNavigation />,
+      errorElement: <ErrorPage />,
+      children: [
+        { path: "/", element: <HomePage /> },
+        { path: "/products", element: <ShoeList allShoes={shoes} /> },
+        { path: "/shoe-page", element: <ShoePage /> },
+        { path: "/add-shoe", element: <AddShoe /> },
+      ],
+    },
+  ]);
+
   return <RouterProvider router={router} />;
 }
 
