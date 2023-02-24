@@ -33,3 +33,7 @@ export async function updateShoe(id, shoeName, shoePrice, shoeImg) {
     image: shoeImg,
   });
 }
+
+export async function deleteShoe(id) {
+  await axios.delete(`${APIUrl}/${id}`);
+}

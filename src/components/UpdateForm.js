@@ -1,7 +1,7 @@
 import React from "react";
 import { ImgWrap, UForm } from "../styled";
 import { useState, useEffect } from "react";
-import { updateShoe, getShoe } from "../utils/API";
+import { updateShoe, getShoe, deleteShoe } from "../utils/API";
 
 const UpdateForm = ({ name, price, img, id, onShoeUpdate }) => {
   const [values, setValues] = useState({});
@@ -39,6 +39,10 @@ const UpdateForm = ({ name, price, img, id, onShoeUpdate }) => {
     setValues({ ...values, [name]: value });
   }
 
+  function deleteHandler() {
+    deleteShoe(values.shoeId);
+  }
+
   return (
     <UForm onSubmit={submitHandler}>
       <ImgWrap>
@@ -48,24 +52,25 @@ const UpdateForm = ({ name, price, img, id, onShoeUpdate }) => {
       <input
         name="shoeName"
         type="text"
-        value={values.shoeName}
+        value={values.shoeName || ""}
         onChange={changeHandler}
       />
       <label>Price:</label>
       <input
         name="shoePrice"
         type="text"
-        value={values.shoePrice}
+        value={values.shoePrice || ""}
         onChange={changeHandler}
       />
       <label>Image:</label>
       <input
         name="shoeImg"
         type="text"
-        value={values.shoeImg}
+        value={values.shoeImg || ""}
         onChange={changeHandler}
       />
       <button type="submit">Edit</button>
+      <button onClick={deleteHandler}>Delete</button>
     </UForm>
   );
 };
