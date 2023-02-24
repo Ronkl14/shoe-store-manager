@@ -13,3 +13,23 @@ export async function getAllShoes(callBackFn) {
     console.error(error);
   }
 }
+
+export async function getShoe(callBackFn, id) {
+  try {
+    const shoe = await axios.get(`${APIUrl}/${id}`);
+    if (!shoe.statusText === "OK") {
+      throw new Error("Could not get shoe");
+    }
+    callBackFn(shoe.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function updateShoe(id, shoeName, shoePrice, shoeImg) {
+  await axios.put(`${APIUrl}/${id}`, {
+    name: shoeName,
+    price: shoePrice,
+    image: shoeImg,
+  });
+}

@@ -6,7 +6,13 @@ const ShoeList = ({ allShoes }) => {
   return (
     <AllShoes>
       {allShoes.map((shoe) => (
-        <ShoeCard shoeName={shoe.name} imgUrl={shoe.image} price={shoe.price} />
+        <ShoeCard
+          key={shoe.id}
+          id={shoe.id}
+          shoeName={shoe.name}
+          imgUrl={shoe.image}
+          price={shoe.price}
+        />
       ))}
     </AllShoes>
   );

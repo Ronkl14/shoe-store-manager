@@ -1,10 +1,11 @@
 import React from "react";
 import { ImgWrap, Card } from "../styled";
+import { Link } from "react-router-dom";
 
-const ShoeCard = ({ shoeName, imgUrl, price }) => {
+const ShoeCard = ({ shoeName, imgUrl, price, id }) => {
   return (
     <Card>
-      <h3>{shoeName}</h3>
+      <Link to={`/shoe-page/${id}`}>{shoeName}</Link>
       <ImgWrap>
         <img src={imgUrl} alt="shoe" width="100%" height="100%" />
       </ImgWrap>
