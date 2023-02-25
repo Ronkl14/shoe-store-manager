@@ -1,16 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage, ShoeList, ShoePage, AddShoe, ErrorPage } from "./pages";
 import { MainNavigation } from "./components";
-import { getAllShoes } from "./utils/API";
-import { useState, useEffect } from "react";
 
 function App() {
-  const [shoes, setShoes] = useState();
-
-  useEffect(() => {
-    getAllShoes(setShoes);
-  }, []);
-
   const router = createBrowserRouter([
     {
       path: "/",
