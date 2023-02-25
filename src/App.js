@@ -10,7 +10,7 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: "/", element: <HomePage /> },
-        { path: "/products", element: <ShoeList allShoes={shoes} /> },
+        { path: "/products", element: <ShoeList /> },
         { path: "/shoe-page/:id", element: <ShoePage /> },
         { path: "/add-shoe", element: <AddShoe /> },
       ],

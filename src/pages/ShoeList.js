@@ -4,7 +4,7 @@ import { AllShoes } from "../styled";
 import { useState, useEffect } from "react";
 import { getAllShoes } from "../utils/API";
 
-const ShoeList = ({ allShoes }) => {
+const ShoeList = () => {
   const [shoes, setShoes] = useState([]);
 
   useEffect(() => {
