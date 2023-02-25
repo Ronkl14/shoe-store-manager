@@ -1,7 +1,7 @@
 import React from "react";
-
+import { AddForm } from "../components";
 const AddShoe = () => {
-  return <div>AddShoe</div>;
+  return <AddForm />;
 };
 
 export default AddShoe;

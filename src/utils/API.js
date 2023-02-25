@@ -27,13 +27,28 @@ export async function getShoe(callBackFn, id) {
 }
 
 export async function updateShoe(id, shoeName, shoePrice, shoeImg) {
-  await axios.put(`${APIUrl}/${id}`, {
-    name: shoeName,
-    price: shoePrice,
-    image: shoeImg,
-  });
+  try {
+    const updateRequest = await axios.put(`${APIUrl}/${id}`, {
+      name: shoeName,
+      price: shoePrice,
+      image: shoeImg,
+    });
+    if (!updateRequest.statusText === "OK") {
+      throw new Error("could not update shoe");
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export async function deleteShoe(id) {
   await axios.delete(`${APIUrl}/${id}`);
+}
+
+export async function addShoe(shoeName, shoePrice, shoeImg) {
+  await axios.post(APIUrl, {
+    name: shoeName,
+    price: shoePrice,
+    image: shoeImg,
+  });
 }
