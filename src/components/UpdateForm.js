@@ -17,20 +17,24 @@ const UpdateForm = ({ name, price, img, id, onShoeUpdate }) => {
 
   async function submitHandler(event) {
     event.preventDefault();
-    updateShoe(
-      values.shoeId,
-      values.shoeName,
-      values.shoePrice,
-      values.shoeImg
-    );
-    const updatedShoe = await getShoe(values.shoeId);
-    setValues({
-      shoeName: updatedShoe.name,
-      shoePrice: updatedShoe.price,
-      shoeImg: updatedShoe.image,
-      shoeId: updatedShoe.id,
-    });
-    onShoeUpdate(updatedShoe);
+    try {
+      await updateShoe(
+        values.shoeId,
+        values.shoeName,
+        values.shoePrice,
+        values.shoeImg
+      );
+      const updatedShoe = await getShoe(values.shoeId);
+      setValues({
+        shoeName: updatedShoe.name,
+        shoePrice: updatedShoe.price,
+        shoeImg: updatedShoe.image,
+        shoeId: updatedShoe.id,
+      });
+      onShoeUpdate(updatedShoe);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function changeHandler(e) {

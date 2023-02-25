@@ -1,7 +1,12 @@
 import React from "react";
 import { AddForm } from "../components";
+import { Page } from "../styled";
 const AddShoe = () => {
-  return <AddForm />;
+  return (
+    <Page>
+      <AddForm />
+    </Page>
+  );
 };
 
 export default AddShoe;

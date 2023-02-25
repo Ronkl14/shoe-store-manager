@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const AllShoes = styled.div`
+export const HomeStyled = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
   justify-content: center;
-  margin: 2rem;
+  align-items: center;
 `;
