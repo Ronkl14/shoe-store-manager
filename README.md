@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Shoe Store Manager App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is a shoe store manager that allows you to manage the shoe inventory by performing all the CRUD (Create, Read, Update, Delete) operations. The app uses an API to retrieve the shoe data, and you can update or delete the data as needed.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- React: a JavaScript library for building user interfaces.
+- Axios: a promise-based HTTP client for making API requests.
+- React Router DOM: a library that allows for client-side routing in a React application.
+- Styled Components: a library that allows you to write CSS in your JavaScript code.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+git clone https://github.com/<your-username>/shoe-store-manager.git
+```
 
-### `npm test`
+2. Install the dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+cd shoe-store-manager
+npm install
+```
 
-### `npm run build`
+3. Run the app:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This should open the app in your browser at `http://localhost:3000`.
 
-### `npm run eject`
+## Demo Website
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A live demo of the app is available at https://rkl14-shoe-store.netlify.app/. You can try out the app there without having to install anything.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- View a list of shoes
+- Add a new shoe to the list
+- Update an existing shoe's details
+- Delete a shoe from the list
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+1. View a list of shoes:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When you first open the app, you will see a list of shoes. Each shoe is displayed with its name, brand, and price.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Add a new shoe:
 
-### Code Splitting
+To add a new shoe to the list, click the "Add Shoe" button at the top of the page. This will open a form where you can enter the details of the new shoe.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Edit a shoe:
 
-### Analyzing the Bundle Size
+To edit the details of an existing shoe, click on the shoe itself in the catalog. This will take you to an edit page where you can update the details of the shoe using a form. Click the "Edit" button to save the changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. Delete a shoe:
 
-### Making a Progressive Web App
+To delete a shoe from the list, click on the shoe itself in the catalog. This will take you to the edit page for that shoe, where you can click the "Delete" button to remove the shoe from the list.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
 
-### Advanced Configuration
+If you want to contribute to this project, please feel free to submit a pull request or open an issue.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
